@@ -1,0 +1,155 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: orange;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+.calculadora {
+  width: 300px;
+  height: 392px;
+  border-radius: 7px;
+  background-color: orange;
+  box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.8);
+}
+
+.displayValor {
+  width: 300px;
+  height: 150px;
+  background-color:  black;
+  border: 4px solid orange;
+  border-radius: 7px;
+  color: black;
+  font-size: 2em;
+  text-align: right;
+  box-sizing: border-box;
+}
+.teclado {
+  display: flex;
+  padding: 1px;
+  
+}
+
+.operadores {
+  width: 90px;
+  height: 200px;
+  margin-left: 5px;
+  margin-top: 4px;
+}
+
+.adicionar, .subtrair, .multiplicar, .dividir, .igual {
+  width: 80px;
+  height: 40px;
+  border-radius: 7px;
+  margin: 3px 0;
+  background-color: black;
+  border: 0px;
+  color: orange;
+  margin-right: 10px;
+}
+
+.igual {
+  height: 42px;
+}
+
+.numero {
+  width: 60px;
+  border-radius: 7px;
+  height: 50px;
+  margin: 3px;
+  border: 0px;
+  background-color: black;
+  color: orange;
+}
+.numerais{
+  margin-top: 10px;
+}
+.numeroColuna{
+  margin-top: 5px;
+}
+.numero:hover {
+  background-color: rgb(145, 95, 1);
+  cursor: pointer;
+  transform: scale(1.05);
+}
+.adicionar:hover,.multiplicar:hover, .dividir:hover, .igual:hover, .numeroZero:hover{
+  background-color: rgb(145, 95, 1);
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+.subtrair:hover{
+  background-color: red;
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+.igual:hover{
+  background-color: green;
+  cursor: pointer;
+  transform: scale(1.05);
+}
+#areaNumerica{
+  width: 292px;
+  height: 60px;
+  border-bottom: 2px solid orange;
+  margin-top: 0px;
+  background-color: black;
+  color: orange;
+  display: flex;
+  align-items: center;
+  font-size:larger;
+  font-weight: 600;
+}
+.numeroZero{
+ width: 60px;
+  border-radius: 7px;
+  height: 50px;
+  border: 0px;
+  margin: 3px;
+  background-color: black;
+  color: orange;
+  margin-left: 6px; 
+}
+.limpar{
+  width: 127px;
+  border-radius: 7px;
+  height: 50px;
+  background-color: black;
+  color: orange;
+  border: 1px;
+  margin: 3px;
+  margin-left: 3px; 
+  margin-top: 6px;
+}
+.limpar:hover{
+  background-color: rgb(145, 95, 1);
+  cursor: pointer;
+  transform: scale(1.05);
+}
+.numerosColuna{
+  width: 207px;
+  border-radius: 7px;
+  height: 50px;
+  padding: 2px;
+  margin-top: 1px;
+}
+.resultadoImpresso{
+  width: 15px;
+  height: 15px;
+  background-color: white;
+}
+.divisaoPorZero{
+  width: 292px;
+  height: 80px;
+  color: red;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  font-size: 18px;
+  font-weight: 800;
+}

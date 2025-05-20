@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="calculadora">
+    <div class="displayValor">
+      <div class="areaNumerica" id="areaNumerica"></div>
+      <div class="divisaoPorZero"></div>
+    </div>
+
+    <div class="teclado">
+
+      <div class="numerais">
+        <div class="numerosColuna">
+          <button class="numero" onclick="inserirNumero('7')">7</button>
+          <button class="numero" onclick="inserirNumero('8')">8</button>
+          <button class="numero" onclick="inserirNumero('9')">9</button>
+        </div>
+        <div class="numerosColuna">
+          <button class="numero" onclick="inserirNumero('4')">4</button>
+          <button class="numero" onclick="inserirNumero('5')">5</button>
+          <button class="numero" onclick="inserirNumero('6')">6</button>
+        </div>
+        <div class="numerosColuna">
+          <button class="numero" onclick="inserirNumero('1')">1</button>
+          <button class="numero" onclick="inserirNumero('2')">2</button>
+          <button class="numero" onclick="inserirNumero('3')">3</button>
+        </div>
+
+        <div class="numerosColuna">
+          <button class="limpar" onclick="limpar('C')">C</button>
+          <button class="numeroZero" onclick="inserirNumero('0')">0</button>
+        </div>
+      </div>
+      <div class="operadores">
+          <button class="dividir" onclick="inserirOperador('/')">/</button>
+          <button class="multiplicar" onclick="inserirOperador('*')">*</button>
+          <button class="subtrair" onclick="inserirOperador('-')">-</button>
+          <button class="adicionar" onclick="inserirOperador('+')">+</button>
+          <button class="igual" onclick="calcular()">=</button>
+        </div>
+    </div>
+  </div>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
