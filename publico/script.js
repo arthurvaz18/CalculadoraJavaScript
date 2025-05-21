@@ -1,5 +1,6 @@
 const visor = document.getElementById('areaNumerica');
-const errorDivisaoZero = document.querySelector('.divisaoPorZero'); //aciona mensagem do erro x/0
+const errorDivisaoZero = document.querySelector('.divisaoPorZero'); //aciona mensagem do erro numero/0
+const maximoDigito = 20;
 let expressao = '';
 
 function atualizarVisor() {
@@ -10,18 +11,18 @@ function atualizarVisor() {
 }
 
 function inserirNumero(numero) {
-  expressao += numero;
+  if(expressao.length < maximoDigito){
+    expressao += numero;
+  }
   atualizarVisor();
 }
 
 function inserirOperador(operador) {
-
   const ultimo = expressao.slice(-1);
 
   if (['+', '-', '*', '/'].includes(ultimo)) {
     expressao = expressao.slice(0, -1);
   }
-
   if (expressao === '' && operador !== '-') return;
 
   expressao += operador;
@@ -50,15 +51,15 @@ function calcular(){
   }
 }
 
-function calcularporExpressao(expr) {
+function calcularporExpressao(calculaExpr) {
   const numeros = [];
   const operadores = [];
 
   let numeroAtual = '';
 
   //percorre todo o array atrás dos caracteres
-  for (let i = 0; i < expr.length; i++) {
-    const caractere = expr[i];
+  for (let i = 0; i < calculaExpr.length; i++) {
+    const caractere = calculaExpr[i];
 
     if (entradaNumero(caractere) || caractere === '.') {
       numeroAtual += caractere; 
@@ -66,7 +67,7 @@ function calcularporExpressao(expr) {
 
       //trata numero negativo no começo ou no final da expressao
       if (numeroAtual === '') {
-        if (caractere === '-' && (i === 0 || entradaOperador(expr[i - 1]))) {
+        if (caractere === '-' && (i === 0 || entradaOperador(calculaExpr[i - 1]))) {
           numeroAtual = '-';
           continue;
         } else {
@@ -74,9 +75,9 @@ function calcularporExpressao(expr) {
         }
       }
 
-      numeros.push(parseFloat(numeroAtual));  //vai salvar o numero
-      operadores.push(caractere);            //vai salvar o operador
-      numeroAtual = '';                      // vai reinicar a operação
+      numeros.push(parseFloat(numeroAtual));
+      operadores.push(caractere);            
+      numeroAtual = '';                      
     }
   }
 
@@ -140,3 +141,23 @@ function limparErrorDivisao(){
 
 //reinicia o visor para uma nova conta(expressao)
 atualizarVisor();
+
+
+
+//entrada de dados pelo meu teclado
+document.addEventListener('keydown', (evento) => {
+  const tecla = evento.key;
+
+  if (tecla === 'Enter') {
+    calcular();
+  } else if (tecla === 'Escape') {
+    limpar();
+  } else if (entradaNumero(tecla) || tecla === '.') {
+    inserirNumero(tecla);
+  } else if (entradaOperador(tecla)) {
+    inserirOperador(tecla); 
+  } else if (tecla === 'Backspace') {
+    expressao = expressao.slice(0, -1);
+    atualizarVisor();
+  }
+});

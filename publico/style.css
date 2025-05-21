@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: orange;
+  background-color: rgb(103, 103, 103);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -95,15 +95,15 @@ body {
 }
 #areaNumerica{
   width: 292px;
-  height: 60px;
+  height: 90px;
   border-bottom: 2px solid orange;
   margin-top: 0px;
   background-color: black;
   color: orange;
   display: flex;
-  align-items: center;
-  font-size:larger;
-  font-weight: 600;
+  font-size: 30px;
+  font-weight: 400;
+  overflow: hidden;
 }
 .numeroZero{
  width: 60px;
